@@ -1,4 +1,4 @@
-/* Copyright (c) 2014-2016, 2018 The Linux Foundation. All rights reserved.
+/* Copyright (c) 2014-2016, 2018-2019, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -1162,6 +1162,28 @@ static int get_prop_batt_voltage_max_design(struct smbchg_chip *chip)
 		uv = DEFAULT_BATT_VOLTAGE_MAX_DESIGN;
 	}
 	return uv;
+}
+
+static int get_prop_batt_charge_counter(struct smbchg_chip *chip)
+{
+	int bcc = 0, rc;
+
+	rc = get_property_from_fg(chip,
+				POWER_SUPPLY_PROP_CHARGE_COUNTER, &bcc);
+	if (rc)
+		pr_smb(PR_STATUS, "Couldn't get charge_counter rc = %d\n", rc);
+	return bcc;
+}
+
+static int get_prop_batt_cycle_count(struct smbchg_chip *chip)
+{
+	int bcc = 0, rc;
+
+	rc = get_property_from_fg(chip,
+				POWER_SUPPLY_PROP_CYCLE_COUNT, &bcc);
+	if (rc)
+		pr_smb(PR_STATUS, "Couldn't get cycle_count rc = %d\n", rc);
+	return bcc;
 }
 
 static int get_prop_batt_health(struct smbchg_chip *chip)
