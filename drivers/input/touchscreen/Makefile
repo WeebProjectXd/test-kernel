@@ -106,15 +106,14 @@ obj-$(CONFIG_TOUCHSCREEN_SYNAPTICS_S3320_I2C_RMI) += synaptics_driver_s3320.o
 obj-$(CONFIG_TOUCHSCREEN_SYNAPTICS_S3320_I2C_RMI) += synaptics_s3320_redremote.o
 obj-$(CONFIG_TOUCHSCREEN_SYNAPTICS_S3320_I2C_RMI) += synaptics_dsx_fw_update.o
 
-obj-$(CONFIG_TOUCHSCREEN_FTS)		+= focaltech_touch/
-obj-$(CONFIG_TOUCHSCREEN_GT917D) += gt917d/
-obj-y +=lct_tp_fm_info.o
-
 obj-$(CONFIG_TOUCHSCREEN_HIMAX_CHIPSET)	+= hxchipset/
 obj-$(CONFIG_TOUCHSCREEN_GT9XX_v28)		+= gt9xx_v2.8/
 obj-$(CONFIG_SWEEP2SLEEP)		+= sweep2sleep.o
 obj-$(CONFIG_TOUCHSCREEN_EKTF3XXX_CHIPSET) += ektf3xxx/
 obj-$(CONFIG_TOUCHSCREEN_RAYDIUM_CHIPSET)  += raydium_wt030/
-obj-$(CONFIG_TOUCHSCREEN_GT9XX)		+= gt9xx/
-obj-$(CONFIG_TOUCHSCREEN_FT5446)	+= ft5446/
+obj-$(CONFIG_TOUCHSCREEN_FTS)		+= focaltech_touch/
+obj-$(CONFIG_TOUCHSCREEN_GT917D) += gt917d/
+obj-y +=lct_tp_fm_info.o
 obj-$(CONFIG_VITURALSAR)		+= vituralsar_driver.o
+obj-$(CONFIG_MACH_XIAOMI_YSL)	+= lct_tp_fm_info.o
+obj-$(CONFIG_TOUCHSCREEN_COMMON)	+= tp_common.o
