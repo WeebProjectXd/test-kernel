@@ -244,8 +244,6 @@
 			qcom,resume-delta-mv = <50>;
 			qcom,chg-inhibit-fg;
 			dpdm-supply = <&qusb_phy>;
-			qcom,hvdcp-disable;
-			qcom,micro-usb;
 			
 			/delete-property/qcom,chg-inhibit-en;
 			/delete-property/ qcom,external-typec;
